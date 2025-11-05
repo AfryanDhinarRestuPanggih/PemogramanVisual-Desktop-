@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GarasiMobil</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <div class="layout-container">
+        <!-- Header -->
+        <header>
+            <div class="logo-container">
+                <span class="material-symbols-outlined logo-icon">directions_car</span>
+                <span class="logo-text">GarasiMobil</span>
+            </div>
+            <nav>
+                <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <a asp-area="" asp-controller="Cars" asp-action="Index">Data Mobil</a>
+                <a asp-area="" asp-controller="Customer" asp-action="Index">Data Customer</a>
+                <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main style="margin-top: 80px;">
+            @RenderBody()
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-grid footer-grid-lg-4">
+                    <div>
+                        <h3 class="footer-title">GarasiMobil</h3>
+                        <p class="footer-text">
+                            Platform terpercaya untuk jual beli mobil berkualitas dengan harga terbaik. 
+                            Kami berkomitmen memberikan pelayanan terbaik untuk setiap pelanggan.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="footer-title">Menu</h3>
+                        <ul class="footer-links">
+                            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li><a asp-controller="Cars" asp-action="Index">Data Mobil</a></li>
+                            <li><a asp-controller="Customer" asp-action="Index">Data Customer</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="footer-title">Informasi</h3>
+                        <ul class="footer-links">
+                            <li><a asp-controller="Home" asp-action="Privacy">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="footer-title">Kontak</h3>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="bi bi-geo-alt"></i>
+                                <span>Jakarta, Indonesia</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-envelope"></i>
+                                <span>info@garasimobil.com</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-telephone"></i>
+                                <span>+62 812-3456-7890</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p class="footer-copyright">&copy; 2025 GarasiMobil. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

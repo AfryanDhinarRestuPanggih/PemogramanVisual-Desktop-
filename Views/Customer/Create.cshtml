@@ -1,0 +1,57 @@
+@model GarasiMobil.Models.Customer
+
+@{
+    ViewData["Title"] = "Tambah Customer Baru";
+}
+
+<div class="container" style="max-width: 700px; margin-top: 3rem;">
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <h1 class="section-title" style="color: white;">
+            <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 2.5rem;">person_add</span>
+            Tambah Customer Baru
+        </h1>
+        <p style="color: var(--color-metalic-gray);">Isi data customer baru dengan lengkap dan benar</p>
+    </div>
+
+    <!-- Form -->
+    <form asp-action="Create" method="post" 
+          style="background-color: #111; padding: 2rem; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.1); color: white;">
+        
+        <div class="mb-3">
+            <label class="form-label">Nama</label>
+            <input asp-for="Nama" class="form-control" style="background-color: #222; color: white; border: none;" placeholder="Masukkan nama lengkap" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" type="email" style="background-color: #222; color: white; border: none;" placeholder="contoh@email.com" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Telepon</label>
+            <input asp-for="Telepon" class="form-control" style="background-color: #222; color: white; border: none;" placeholder="0812xxxxxxx" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Alamat</label>
+            <textarea asp-for="Alamat" class="form-control" style="background-color: #222; color: white; border: none;" rows="3" placeholder="Masukkan alamat lengkap"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Tanggal Daftar</label>
+            <input asp-for="TanggalDaftar" type="date" class="form-control" style="background-color: #222; color: white; border: none;" />
+        </div>
+
+        <div style="text-align: right; margin-top: 2rem;">
+            <a asp-action="Index" class="btn btn-secondary" style="background-color: #333; color: white; border: none; margin-right: 0.5rem;">Batal</a>
+            <button type="submit" class="btn-primary" style="background-color: var(--color-primary); color: black; border: none;">Simpan Customer</button>
+        </div>
+    </form>
+</div>
+
+<style>
+    .form-control:focus {
+        box-shadow: 0 0 0 2px var(--color-primary);
+    }
+</style>

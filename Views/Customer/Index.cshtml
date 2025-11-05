@@ -1,0 +1,148 @@
+@model IEnumerable<GarasiMobil.Models.Customer>
+
+@{
+    ViewData["Title"] = "Data Customer";
+}
+
+<div class="container">
+    <!-- Page Header -->
+    <div style="text-align: center; margin-bottom: 3rem;">
+        <h1 class="section-title">
+            <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 2.5rem;">group</span>
+            Daftar Customer
+        </h1>
+        <p style="color: var(--color-metalic-gray); max-width: 600px; margin: 0 auto;">
+            Kelola data customer dengan mudah dan efisien
+        </p>
+    </div>
+
+    <!-- Action Button -->
+    <div style="text-align: right; margin-bottom: 2rem;">
+        <a class="btn-primary" asp-action="Create">
+            <i class="bi bi-person-plus me-2"></i>Tambah Customer Baru
+        </a>
+    </div>
+
+    <!-- Customer Table -->
+    @if (Model != null && Model.Any())
+    {
+        <div style="background-color: var(--color-surface-dark); border-radius: 1rem; border: 1px solid rgba(255, 255, 255, 0.1); overflow: hidden;">
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background-color: rgba(212, 175, 55, 0.1); border-bottom: 2px solid var(--color-primary);">
+                            <th style="padding: 1rem; text-align: left; color: white; font-weight: 600; font-size: 0.875rem;">
+                                <i class="bi bi-person-badge me-2"></i>Nama
+                            </th>
+                            <th style="padding: 1rem; text-align: left; color: white; font-weight: 600; font-size: 0.875rem;">
+                                <i class="bi bi-envelope me-2"></i>Email
+                            </th>
+                            <th style="padding: 1rem; text-align: left; color: white; font-weight: 600; font-size: 0.875rem;">
+                                <i class="bi bi-telephone me-2"></i>Telepon
+                            </th>
+                            <th style="padding: 1rem; text-align: left; color: white; font-weight: 600; font-size: 0.875rem;">
+                                <i class="bi bi-geo-alt me-2"></i>Alamat
+                            </th>
+                            <th style="padding: 1rem; text-align: left; color: white; font-weight: 600; font-size: 0.875rem;">
+                                <i class="bi bi-calendar-check me-2"></i>Tanggal Daftar
+                            </th>
+                            <th style="padding: 1rem; text-align: center; color: white; font-weight: 600; font-size: 0.875rem;">
+                                <i class="bi bi-tools me-2"></i>Aksi
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var c in Model)
+                        {
+                            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: background-color 0.3s;">
+                                <td style="padding: 1rem; color: white; font-weight: 500;">@c.Nama</td>
+                                <td style="padding: 1rem; color: var(--color-metalic-gray);">@c.Email</td>
+                                <td style="padding: 1rem; color: var(--color-metalic-gray);">@c.Telepon</td>
+                                <td style="padding: 1rem; color: var(--color-metalic-gray); max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                    @c.Alamat
+                                </td>
+                                <td style="padding: 1rem; color: var(--color-metalic-gray);">
+                                    @c.TanggalDaftar.ToString("dd MMM yyyy")
+                                </td>
+                                <td style="padding: 1rem;">
+                                    <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                                        <a asp-action="Edit" asp-route-id="@c.Id" 
+                                           style="padding: 0.375rem 0.75rem; background-color: rgba(212, 175, 55, 0.1); color: var(--color-primary); text-align: center; border-radius: 0.375rem; text-decoration: none; font-size: 0.75rem; font-weight: 600; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.25rem;">
+                                            <i class="bi bi-pencil"></i> Edit
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@c.Id" 
+                                           style="padding: 0.375rem 0.75rem; background-color: rgba(220, 38, 38, 0.1); color: #ef4444; text-align: center; border-radius: 0.375rem; text-decoration: none; font-size: 0.75rem; font-weight: 600; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.25rem;"
+                                           onclick="return confirm('Yakin ingin menghapus customer @c.Nama?');">
+                                            <i class="bi bi-trash"></i> Hapus
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div style="text-align: center; padding: 4rem; background-color: var(--color-surface-dark); border-radius: 1rem; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <span class="material-symbols-outlined" style="font-size: 4rem; color: var(--color-metalic-gray);">group_off</span>
+            <h3 style="color: white; margin-top: 1rem;">Belum Ada Customer</h3>
+            <p style="color: var(--color-metalic-gray); margin-bottom: 2rem;">
+                Mulai tambahkan customer pertama ke dalam database
+            </p>
+            <a class="btn-primary" asp-action="Create">
+                <i class="bi bi-person-plus me-2"></i>Tambah Customer
+            </a>
+        </div>
+    }
+
+    <!-- Customer Stats -->
+    @if (Model != null && Model.Any())
+    {
+        <div style="margin-top: 2rem;">
+            <div class="grid grid-cols-1 grid-cols-sm-2 grid-cols-lg-4">
+                <div class="feature-card">
+                    <span class="material-symbols-outlined feature-icon">groups</span>
+                    <h3 class="feature-title">Total Customer</h3>
+                    <p style="font-size: 2rem; font-weight: bold; color: var(--color-primary); margin: 0;">
+                        @Model.Count()
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-symbols-outlined feature-icon">person_add</span>
+                    <h3 class="feature-title">Customer Baru (Bulan Ini)</h3>
+                    <p style="font-size: 2rem; font-weight: bold; color: var(--color-primary); margin: 0;">
+                        @Model.Count(c => c.TanggalDaftar.Month == DateTime.Now.Month)
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-symbols-outlined feature-icon">verified_user</span>
+                    <h3 class="feature-title">Customer Aktif</h3>
+                    <p style="font-size: 2rem; font-weight: bold; color: var(--color-primary); margin: 0;">
+                        @Model.Count()
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-symbols-outlined feature-icon">trending_up</span>
+                    <h3 class="feature-title">Pertumbuhan</h3>
+                    <p style="font-size: 2rem; font-weight: bold; color: #10b981; margin: 0;">
+                        +@(Model.Count(c => c.TanggalDaftar >= DateTime.Now.AddDays(-30)))
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    tbody tr:hover {
+        background-color: rgba(212, 175, 55, 0.05) !important;
+    }
+    
+    td a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+    }
+</style>

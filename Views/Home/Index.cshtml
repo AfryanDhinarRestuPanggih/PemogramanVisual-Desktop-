@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-background"></div>
+    <div class="hero-content">
+        <h1 class="hero-title">Temukan Mobil Impian Anda di GarasiMobil</h1>
+        <p class="hero-subtitle">
+            Platform jual beli mobil terpercaya dengan koleksi lengkap dan harga terbaik. 
+            Ratusan pilihan mobil berkualitas menanti Anda.
+        </p>
+        <a asp-controller="Cars" asp-action="Index" class="btn-primary">
+            Lihat Koleksi Mobil
+        </a>
+    </div>
+</section>
+
+<!-- Dashboard Stats -->
+<div class="container">
+    <section>
+        <h2 class="section-title">Dashboard Statistik</h2>
+        <div class="grid grid-cols-1 grid-cols-sm-2 grid-cols-lg-4">
+            <div class="feature-card">
+                <span class="material-symbols-outlined feature-icon">directions_car</span>
+                <h3 class="feature-title">Total Mobil</h3>
+                <p class="feature-description" style="font-size: 2rem; font-weight: bold; color: var(--color-primary);">
+                    @ViewBag.TotalMobil
+                </p>
+            </div>
+            <div class="feature-card">
+                <span class="material-symbols-outlined feature-icon">group</span>
+                <h3 class="feature-title">Total Customer</h3>
+                <p class="feature-description" style="font-size: 2rem; font-weight: bold; color: var(--color-primary);">
+                    @ViewBag.TotalCustomer
+                </p>
+            </div>
+            <div class="feature-card">
+                <span class="material-symbols-outlined feature-icon">verified</span>
+                <h3 class="feature-title">Kualitas Terjamin</h3>
+                <p class="feature-description">
+                    Setiap mobil telah melalui inspeksi ketat untuk memastikan kualitas terbaik
+                </p>
+            </div>
+            <div class="feature-card">
+                <span class="material-symbols-outlined feature-icon">support_agent</span>
+                <h3 class="feature-title">Layanan 24/7</h3>
+                <p class="feature-description">
+                    Tim customer service kami siap membantu Anda kapan saja
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section>
+        <h2 class="section-title">Mengapa Memilih GarasiMobil?</h2>
+        <div class="grid grid-cols-1 grid-cols-md-3">
+            <div class="feature-card">
+                <span class="material-symbols-outlined feature-icon">local_atm</span>
+                <h3 class="feature-title">Harga Kompetitif</h3>
+                <p class="feature-description">
+                    Dapatkan harga terbaik untuk setiap transaksi dengan transparansi penuh
+                </p>
+            </div>
+            <div class="feature-card">
+                <span class="material-symbols-outlined feature-icon">security</span>
+                <h3 class="feature-title">Transaksi Aman</h3>
+                <p class="feature-description">
+                    Sistem pembayaran yang aman dan terpercaya untuk melindungi setiap transaksi
+                </p>
+            </div>
+            <div class="feature-card">
+                <span class="material-symbols-outlined feature-icon">handshake</span>
+                <h3 class="feature-title">Garansi Kepuasan</h3>
+                <p class="feature-description">
+                    Jaminan kepuasan pelanggan dengan layanan purna jual yang profesional
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="text-align: center; padding: 4rem 0;">
+        <div style="background-color: var(--color-surface-dark); padding: 3rem; border-radius: 1rem; border: 1px solid rgba(212, 175, 55, 0.3);">
+            <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">
+                Siap Menemukan Mobil Impian?
+            </h2>
+            <p style="color: var(--color-metalic-gray); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Jelajahi koleksi lengkap kami dan temukan mobil yang sempurna untuk Anda
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a asp-controller="Cars" asp-action="Index" class="btn-primary">
+                    Lihat Semua Mobil
+                </a>
+                <a asp-controller="Customer" asp-action="Create" class="btn-primary" style="background-color: transparent; border: 2px solid var(--color-primary); color: var(--color-primary);">
+                    Daftar Sekarang
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
