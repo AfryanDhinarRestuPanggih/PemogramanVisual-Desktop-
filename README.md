@@ -6,7 +6,7 @@ Didesain dengan tampilan **mewah**, **modern**, dan **interaktif**, aplikasi ini
 ---
 
 ## Link YouTube  
-[![YouTube](https://raw.githubusercontent.com/github/explore/main/topics/youtube/youtube.gif)](https://youtu.be/eGKi_q1TiIM?si=zF42oxEy9nlfUaYS)
+https://youtu.be/eGKi_q1TiIM?si=zF42oxEy9nlfUaYS  
 
   
 
