@@ -5,7 +5,25 @@ Didesain dengan tampilan **mewah**, **modern**, dan **interaktif**, aplikasi ini
 
 ---
 
-## Link YouTube (Coming soon)  
+## Link YouTube  
+[![YouTube](https://raw.githubusercontent.com/github/explore/main/topics/youtube/youtube.gif)](https://youtu.be/eGKi_q1TiIM?si=zF42oxEy9nlfUaYS)
+
+  
+
+## Mock Up  
+### Login  
+<img width="974" height="525" alt="Screenshot 2025-12-02 010913" src="https://github.com/user-attachments/assets/67d000e0-f8a2-4ba9-b47f-7de602109f2a" />  
+
+### Home  
+<img width="978" height="529" alt="image" src="https://github.com/user-attachments/assets/581813c7-651d-4b3e-be99-4ba00827604c" />  
+
+### Data Mobil  
+<img width="975" height="526" alt="image" src="https://github.com/user-attachments/assets/b4a46580-7be1-4798-aa55-d83fe8b2343f" />  
+
+### Data Customer  
+<img width="972" height="524" alt="image" src="https://github.com/user-attachments/assets/1f8e0811-b9b8-4954-b1ca-219e9e568451" />  
+
+
 
 ## 🌐 1. Cara Setting Web Service dan Konfigurasi Web
 
